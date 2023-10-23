@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="google-site-verification" content="aIiuTLs4iiznZTMM51mRInTWsOjHw3RKrXQ_nsBFzz8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="./bootstrap_5.0.2_range.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script>
+
+
+    <title>Neural Caches for Monte Carlo Partial Differential Equation Solver
+        </title>
+</head>
+
+<body class="container" style="max-width:900px">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+
+    <!-- heading -->
+    <div>
+        <!-- title -->
+        <div class='row mt-5 mb-3'>
+            <div class='col text-center'>
+                <p class="h2 font-weight-normal">Neural Caches for Monte Carlo Partial Differential Equation Solve:</p>
+            </div>
+        </div>
+
+        <!-- authors -->
+        <div class="row text-center h6 font-weight-bold mb-2 ">
+            <span class="col-md-1" style="flex: 0 0 25%; max-width: 25%;"></span>
+            <span><a class="col-md-4 col-xs-6 pb-2" href="https://zilulii.github.io">Zilu Li
+                    </a></span>
+            <span><a class="col-md-4 col-xs-6 pb-2" href="https://www.guandaoyang.com">Guandao Yang</a></span>
+            <span><a class="col-md-4 col-xs-6 pb-2" href="https://www.cs.cornell.edu/~xideng/">Xi Deng</a></span>
+        </div>
+        <div class="row text-center h6 font-weight-bold mb-3 ">
+            <span class="col-md-1" style="flex: 0 38%; max-width: 38%;"></span>
+            <span><a class="col-md-4 col-xs-6 pb-2" href="https://www.cs.cornell.edu/~cdesa/">Christopher De Sa</a></span>
+            <span><a class="col-md-4 col-xs-6 pb-2" href="https://www.cs.cornell.edu/~bharathh/">Bharath Hariharan</a></span>
+            <span><a class="col-md-4 col-xs-6 pb-2" href="https://www.cs.cornell.edu/~srm/">Steve Marschner</a></span>
+
+        </div>
+
+        <!-- affiliations -->
+        <div class="row mb-1">
+            <div class="col text-center">
+                <p class="h6">
+                    <span class="col-md-4"><sup>1</sup> Cornell University</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- venue -->
+        <div class='row mb-2'>
+            <div class='col text-center'>
+                <p class="h6"> SIGGRAPH Asia 2023
+                </p>
+            </div>
+        </div>
+
+        <!-- links -->
+        <div class='row mb-4'>
+            <div class='col text-center'>
+                <!-- <a href="https://arxiv.org/abs/2304.13681" class="btn btn-outline-primary" role="button">
+                    <i class="ai ai-arxiv"></i>
+                    arXiv
+                </a> -->
+                <a href="https://github.com/ZiluLii/NeuralCache" class="btn btn-outline-primary" role="button">
+                    <i class="fa fa-github"></i>
+                    Code
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- teaser -->
+    <div class='row justify-content-center'>
+
+        <div class='col-md-12 col-sm-12 col-xs-12 align-middle mt-4'>
+            <p class='h5'>
+                We combine Neural Field with Monte Carlo method, using it as a cache, and provide a faster and more accurate PDE solver.
+            </p>
+        </div>
+    </div>
+    <br>
+    <div class="card">
+        <img src="assets/teaser.jpg" class="img-fluid rounded mx-auto d-block">
+        <div class="row">
+            <div class="col-md-2">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Input
+            </div>
+            <div class="col-md-4">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Novel
+                Views
+            </div>
+            <div class="col-md-6">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                Photoshop Blending
+            </div>
+        </div>
+        <p style="margin: 10px; margin-bottom: 4px;">
+            Ray conditioning enables photo-realistic multi-view image editing on natural photos via GAN inversion.
+            The left half shows headshots of four individuals and their corresponding synthesized results
+            from another viewpoint. The right half shows a portrait of two individuals (top
+            row), the GAN inversion results of their faces (top row corners), and the resulting image (bottom row), in
+            which their faces are replaced with synthesized faces looking in a different direction (bottom row corners).
+        </p>
+    </div>
+
+    <!-- <div class='col-md-12 col-sm-12 col-xs-12 align-middle mt-4 mb-4'>
+        <p class='h6 font-weight-bold '>
+
+        </p>
+    </div> -->
+
+
+
+    <!-- Paper section -->
+    <div>
+        <!-- <hr> -->
+        <div class="row">
+            <div class='col-md-3 col-sm-3 col-xs-12 text-center my-auto'>
+                <div class="row">
+                    <a href="https://arxiv.org/abs/2304.13681" style="max-width:200px;"><!-- pdf link -->
+                        <img src="assets/paper-snapshot.jpg" alt="paper-snapshot" class="img-thumbnail" height="75%"
+                            style="box-shadow: 10px 10px 5px grey;">
+                    </a>
+                </div>
+            </div>
+            <div class='col-md-9 col-sm-9 col-xs-12'>
+                <p class='h4 font-weight-bold '>Abstract</p>
+                <p> This paper presents a method that uses neural networks as a caching mechanism to reduce the variance of Monte Carlo Partial Differential Equation solvers,
+                     such as the Walk-on-Spheres algorithm<a href="http://www.cs.cmu.edu/~kmcrane/Projects/MonteCarloGeometryProcessing/index.html"></a> [Sawhney and Crane 2020].
+                     While these Monte Carlo PDE solvers have the merits of being unbiased and discretization-free,
+                      their high variance often hinders real-time applications. 
+                      On the other hand, neural networks can approximate the PDE solution, 
+                      and evaluating these networks at inference time can be very fast. 
+                      However, neural-network-based solutions may suffer from convergence difficulties and high bias. 
+                      Our hybrid system aims to combine these two potentially complementary solutions by training a neural field to approximate the PDE solution using supervision from a WoS solver.
+                      This neural field is then used as a cache in the WoS solver to reduce variance during inference.
+                      We demonstrate that our neural field training procedure is better than the commonly used self-supervised objectives in the literature.
+                      We also show that our hybrid solver exhibits lower variance than WoS with the same computational budget: 
+                      it is significantly better for small compute budgets and provides smaller improvements for larger budgets,
+                       reaching the same performance as WoS in the limit.
+                </p>
+            </div>
+        </div>
+        <hr>
+        <p class='h4 font-weight-bold '>Fast Forward Video</p>
+        <p align="center">
+            <iframe width="600" height="400" src="https://www.youtube.com/watch?v=TynncIBQXkk"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </p>
+    </div>
+    <div class='col-md-15'>
+
+        <p class='h4 font-weight-bold '>Introduction</p>
+        <p>
+            test
+
+        </p>
+
+        <p class='h4 font-weight-bold '>Neural Cache Explain</p>
+        <img src="assets/method.jpg" class="img-fluid rounded mx-auto d-block">
+        <p> testtest
+        </p>
+
+    </div>
+    <br>
+
+    <br>
+    <div class='col-md-15'>
+        <p class='h4 font-weight-bold '>Results </p>
+
+        <div>
+            <img src="assets/sample_results2.jpg" class="img-fluid rounded mx-auto d-block">
+            <p style="margin: 10px; margin-bottom: 4px;">
+                Fig4 : Equal Sample Comparison
+            </p>
+        </div>
+    </div>
+    <br>
+    <div class='col-md-15'>
+        moremore
+    </div>
+
+    <br>
+    <div class="row text-center">
+        <div class="col-md-6">
+            Ray Conditioning + <a href=https://github.com/danielroich/PTI>PTI</a>
+        </div>
+        <div class="col-md-6">
+            <a href=https://nvlabs.github.io/eg3d>EG3D</a> + <a
+                href=https://ken-ouyang.github.io/HFGI3D/index.html>HFGI3D</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <img src="assets/00175_raycond_full.jpg" class="img-fluid rounded">
+        </div>
+        <div class="col-md-6">
+            <img src="assets/00175_hfgi3d_full.jpg" class="img-fluid rounded">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Input
+        </div>
+        <div class="col-md-4">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Novel Views
+        </div>
+        <div class="col-md-2">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Input
+        </div>
+        <div class="col-md-4">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Novel Views
+        </div>
+    </div>
+    <br>
+
+    <div class="col-md-15">
+        <p>When trained on a multi-view dataset such as <a href="https://www.vincentsitzmann.com/srns">SRN Cars</a>,
+            ray conditioning is able to generate and render
+            view consistent videos at the cost of a 2D GAN. Results are pictured with a truncation of 0.6.
+        </p>
+    </div>
+    <div class="text-center">
+        <video width="400" height="400" muted autoplay loop playsinline>
+            <source src=" assets/cars.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <p class='h5 font-weight-bold '>Caching</p>
+    <p>
+        Hybrid Depth Analysis
+    </p>
+    <div class="row text-center">
+        <div class="col-md-6">
+            <video width="400" height="400" muted autoplay loop playsinline>
+                <source src=" assets/red.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="col-md-6">
+            <video width="400" height="400" muted autoplay loop playsinline>
+                <source src=" assets/yellow.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+        </div>
+    </div>
+
+
+    <div>
+        <hr>
+        <div class='row'>
+            <div class='col-md-12 col-sm-12 col-xs-12'>
+                <p class='h4 font-weight-bold'>Acknowledgements</p>
+                <p style='line-height:1;'>
+                    This research was supported in part by the
+                    National Science Foundation under grant 2212084, grant 2144117,
+                    and by the RI-CAREER award 2046760. We want to thank Rohan
+                    Sawhney and Wenqi Xian for their discussions.
+                </p>
+            </div>
+        </div>
+        <hr>
+        <div class='row'>
+            <div class='col-md-12 col-sm-12 col-xs-12'>
+                <p class='h4 font-weight-bold '>Citation</p>
+                <pre><code>@inproceedings{chen2023:ray-conditioning,
+  author = {Zilu Li and Guandao Yang and Xi Deng and Christopher De Sa and Bharath Hariharan and Steve Marschner},
+  title = {Neural Caches for Monte Carlo Partial Differential Equation Solver},
+  booktitle = {SIGGRAPH Asia},
+  year = {2023}
+}</code></pre>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
