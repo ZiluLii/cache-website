@@ -150,7 +150,12 @@
 
         <p class='h4 font-weight-bold '>Neural Cache Explain</p>
         <img src="assets/method.png" class="img-fluid rounded mx-auto d-block">
-        <p> testtest
+        <p> 
+            We want to build a hybrid solver where we can reduce the inference time for WoS by querying the neural field after a fixed compute budget.
+            We achieve this hybrid solver in two steps. First, we proposed to use a WoS estimator to provide target data to supervise the neural field to approximate the PDE solution. 
+            Once we obtain a neural field with a small enough error, we use a hybrid WoS solver that terminates the recursive call by querying the neural field. 
+            Intuitively, this hybrid solver can lower the error of the neural field solution since it performs WoS-style random walks that can terminate at the boundary. 
+            At the same time, it can achieve lower variance than the WoS estimator since it conducts shorter walks.
         </p>
 
     </div>
@@ -159,11 +164,12 @@
     <br>
     <div class='col-md-15'>
         <p class='h4 font-weight-bold '>Results </p>
-
         <div>
             <img src="assets/equal_time.png" class="img-fluid rounded mx-auto d-block">
             <p style="margin: 10px; margin-bottom: 4px;">
-                <!-- Fig4 : Equal Sample Comparison -->
+                We solve a variable coefficient screened Poisson equation with different domain shapes, including high-genus shapes like Sprocket (Row 2) and shapes with thin structures and sharp edges (Row 3). 
+                We sample a 512x512 slice for each method and allocate 5 minutes of compute time to obtain the result. We can see that the hybrid solver can achieve more accurate results than both the self-supervised baseline (with high bias) and the WoS baseline (with high variance).
+                The performance gap is larger when the PDE solution is high-frequency.
             </p>
         </div>
     </div>
@@ -175,76 +181,29 @@
             <img src="assets/equal_sample.png" class="img-fluid rounded mx-auto d-block">
             <p style="margin: 10px; margin-bottom: 4px;">
                 <!-- Fig4 : Equal Sample Comparison -->
+                L: we show the number of walks v.s. MSE curves. 
+                Our method achieves lower MSE when the number of walks is limited.
+                R: a qualitative comparison of different models at 100 walks per pixel.
             </p>
         </div>
     </div>
 
     <br>
-    <div class="row text-center">
-        <div class="col-md-6">
-            Ray Conditioning + <a href=https://github.com/danielroich/PTI>PTI</a>
-        </div>
-        <div class="col-md-6">
-            <a href=https://nvlabs.github.io/eg3d>EG3D</a> + <a
-                href=https://ken-ouyang.github.io/HFGI3D/index.html>HFGI3D</a>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-6">
-            <img src="assets/00175_raycond_full.jpg" class="img-fluid rounded">
-        </div>
-        <div class="col-md-6">
-            <img src="assets/00175_hfgi3d_full.jpg" class="img-fluid rounded">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-2">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Input
-        </div>
-        <div class="col-md-4">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Novel Views
-        </div>
-        <div class="col-md-2">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Input
-        </div>
-        <div class="col-md-4">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Novel Views
-        </div>
-    </div>
-    <br>
+    <div class='col-md-15'>
+        <p class='h4 font-weight-bold '>Results </p>
 
-    <div class="col-md-15">
-        <p>When trained on a multi-view dataset such as <a href="https://www.vincentsitzmann.com/srns">SRN Cars</a>,
-            ray conditioning is able to generate and render
-            view consistent videos at the cost of a 2D GAN. Results are pictured with a truncation of 0.6.
-        </p>
-    </div>
-    <div class="text-center">
-        <video width="400" height="400" muted autoplay loop playsinline>
-            <source src=" assets/cars.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        <div>
+            <img src="assets/barplot.png" class="img-fluid rounded mx-auto d-block">
+            <p style="margin: 10px; margin-bottom: 4px;">
+                <!-- Fig4 : Equal Sample Comparison -->
+                Computational time breakdown for WoS and our
+                method. We report the time it took each of the methods to
+                reach an MSE error of less than 5e-3. Our hybrid solver is
+                faster than WoS when there are more test samples.
+            </p>
+        </div>
     </div>
 
-    <p class='h5 font-weight-bold '>Caching</p>
-    <p>
-        Hybrid Depth Analysis
-    </p>
-    <div class="row text-center">
-        <div class="col-md-6">
-            <video width="400" height="400" muted autoplay loop playsinline>
-                <source src=" assets/red.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        <div class="col-md-6">
-            <video width="400" height="400" muted autoplay loop playsinline>
-                <source src=" assets/yellow.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-
-        </div>
-    </div>
 
 
     <div>
@@ -261,17 +220,6 @@
             </div>
         </div>
         <hr>
-        <div class='row'>
-            <div class='col-md-12 col-sm-12 col-xs-12'>
-                <p class='h4 font-weight-bold '>Citation</p>
-                <pre><code>@inproceedings{chen2023:ray-conditioning,
-  author = {Zilu Li and Guandao Yang and Xi Deng and Christopher De Sa and Bharath Hariharan and Steve Marschner},
-  title = {Neural Caches for Monte Carlo Partial Differential Equation Solver},
-  booktitle = {SIGGRAPH Asia},
-  year = {2023}
-}</code></pre>
-            </div>
-        </div>
     </div>
 
 </body>
