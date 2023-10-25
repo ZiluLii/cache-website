@@ -151,8 +151,8 @@
         <p class='h4 font-weight-bold '>Method</p>
         <img src="assets/method.png" class="img-fluid rounded mx-auto d-block">
         <p> 
-            We want to build a hybrid solver where we can reduce the inference time for WoS by querying the neural field after a fixed compute budget.
-            We achieve this hybrid solver in two steps. First, we proposed to use a WoS estimator to provide target data to supervise the neural field to approximate the PDE solution. 
+            We want to build a hybrid solver to reduce the inference time for WoS by querying the neural field after a fixed compute budget.
+            We achieve this hybrid solver in two steps. First, we use a WoS estimator to provide target data to supervise the neural field to approximate the PDE solution. 
             Once we obtain a neural field with a small enough error, we use a hybrid WoS solver that terminates the recursive call by querying the neural field. 
             Intuitively, this hybrid solver can lower the error of the neural field solution since it performs WoS-style random walks that can terminate at the boundary. 
             At the same time, it can achieve lower variance than the WoS estimator since it conducts shorter walks.
