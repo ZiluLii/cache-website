@@ -149,7 +149,13 @@
         </p>
 
         <p class='h4 font-weight-bold '>Method</p>
-        <img src="assets/method.png" class="img-fluid rounded mx-auto d-block">
+        <video width="600" height="400" muted autoplay loop playsinline>
+                    <source src=" assets/testout.m4v" type="video/m4v">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        <!-- <img src="assets/method.png" class="img-fluid rounded mx-auto d-block"> -->
+
         <p> 
             We want to build a hybrid solver to reduce the inference time for WoS by querying the neural field after a fixed compute budget.
             We achieve this hybrid solver in two steps. First, we use a WoS estimator to provide target data to supervise the neural field to approximate the PDE solution. 
@@ -161,19 +167,6 @@
     </div>
     <br>
 
-    <br>
-    <div class='col-md-15'>
-        <p class='h4 font-weight-bold '>Equal Time Comparison </p>
-        <div>
-            <img src="assets/equal_time.png" class="img-fluid rounded mx-auto d-block">
-            <p style="margin: 10px; margin-bottom: 4px;">
-                We solve a variable coefficient screened Poisson equation with different domain shapes, including high-genus shapes like Sprocket (Row 2) and shapes with thin structures and sharp edges (Row 3). 
-                We sample a 512x512 slice for each method and allocate 5 minutes of compute time to obtain the result. We can see that the hybrid solver can achieve more accurate results than both the self-supervised baseline (with high bias) and the WoS baseline (with high variance).
-                The performance gap is larger when the PDE solution is high-frequency.
-            </p>
-        </div>
-    </div>
-    <br>
     <div class='col-md-15'>
         <p class='h4 font-weight-bold '>Equal Sample Comparison </p>
 
